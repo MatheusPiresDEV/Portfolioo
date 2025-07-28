@@ -1,0 +1,130 @@
+@import "../../vars.css"; /* Importa variáveis CSS de outro arquivo */
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0; /* Mantém a navbar no topo da página */
+  width: 100%; /* Certifica-se de que a navbar ocupa toda a largura da página */
+  padding-top: 10px; /* Ajusta o padding para evitar sobreposição de conteúdo */
+  padding-bottom: 10px; /* Adicionado para consistência */
+  z-index: 1000; /* Certifique-se de que a navbar fique acima dos outros elementos */
+  background-color: var(--color-bg); /* Fundo original da navbar */
+}
+
+/* Div para conter o menu e aplicar o hover */
+.menuContainer {
+  position: relative;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+}
+
+/* Itens do menu */
+.menuItems {
+  display: flex;
+  gap: 47px;
+  list-style: none;
+}
+
+.menuItems a {
+  font-size: 25px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+/* Itens de navegação */
+.navItem {
+  position: relative; /* Necessário para o :after */
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  list-style-type: none;
+}
+
+.navItem:after {
+  content: "";
+  position: absolute;
+  background-color: #8f0000;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: width 0.3s;
+}
+
+.navItem:hover {
+  color: #ffffff;
+}
+
+.navItem:hover:after {
+  width: 100%;
+}
+
+/* Título */
+.title {
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+/* Botão do menu */
+.menuBtn {
+  display: none;
+}
+
+/* Estilos responsivos para telas menores */
+@media screen and (max-width: 830px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 5%; /* Ajusta o padding para telas menores */
+  }
+
+  .menu {
+    position: relative;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 11px;
+    z-index: 3;
+  }
+
+  .menuBtn {
+    display: block;
+    cursor: pointer;
+  }
+
+  .menuItems {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+    border-radius: 10px;
+    background: rgb(25, 55, 109);
+    background: linear-gradient(
+      0deg,
+      rgba(25, 55, 109, 0.2) 0%,
+      rgba(25, 55, 109, 1) 100%
+    );
+    padding: 24px 33px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  .menuOpen {
+    display: flex;
+    z-index: 1;
+  }
+
+  .title {
+    font-size: 24px; /* Ajustado para melhor visualização em telas menores */
+  }
+
+  .menuItems a {
+    font-size: 20px; /* Ajustado para melhor visualização em telas menores */
+  }
+}
