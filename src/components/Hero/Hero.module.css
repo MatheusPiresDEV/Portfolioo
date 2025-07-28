@@ -25,9 +25,9 @@
 
 /* Estilo do título principal, com tamanho, peso e efeito de gradiente */
 .title {
-  font-size: 50px;
-  font-weight: 900;
-  margin-bottom: 33px;
+  font-size: 33px;
+  font-weight: 800;
+  margin-bottom: 23px;
   font-family: var(--font-roboto);
   background: linear-gradient(
     90deg,

@@ -70,16 +70,16 @@ export const Hero = () => {
   return (
     <section className={styles.container}>
       <div className={styles.content}>
-        <h1 className={styles.title}>Olá, me chamo Matheus</h1>
+        <h1 className={styles.title}>Matheus, técnico em Desenvolvimento de Sistemas</h1>
         <p className={styles.description}>
-          Cursando Engenharia de Software no SENAI, com formação técnica em
-          Desenvolvimento de Sistemas pela mesma instituição. Tenho sólida base
+          Cursando Engenharia de Software na UniSenai - PR, com formação técnica em
+          Desenvolvimento de Sistemas pelo Senai. Tenho sólida base
           em programação e boas práticas de desenvolvimento adquiridas ao longo
           da formação.
         </p>
         <p className={styles.description}>
           Atualmente no {currentPeriod}º período. Faltam {remainingPeriods} períodos para se formar.<br />
-          Previsão realista de formatura: {estimatedGraduationDate.toLocaleDateString("pt-BR")}<br />
+          Previsão de formatura: {estimatedGraduationDate.toLocaleDateString("pt-BR")}<br />
           Tempo restante: {tempoRestante.anos} ano(s), {tempoRestante.meses} mês(es), {tempoRestante.minutos} min e {tempoRestante.segundos} segundos<br />
           Carga horária total do curso: {totalCourseHours} horas<br />
           <strong>Progresso do curso:</strong> {progressPercentage}% concluído
@@ -96,7 +96,7 @@ export const Hero = () => {
       </div>
       <div>
         <img
-          src={getImageUrl("hero/AboutMe.jpg")}
+          src={getImageUrl("hero/eu.jpg")}
           alt="Foto minha"
           className={styles.heroImg}
         />

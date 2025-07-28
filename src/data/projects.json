@@ -2,9 +2,9 @@
   {
     "title": "Tcc InQuadra",
     "imageSrc": "projects/tcc.png",
-    "description": "Projeto em desenvolvimento referente a criação de um site para alugueis de quadras esportivas",
-    "skills": ["HTML", "CSS", "JavaScript", "Pythom" ,"MySQL"],
-    "source": "https://github.com/MatheusPiresDEV/TCCInQuadra "
+    "description": "Projeto de aluguel de quadras esportivas, TCC refernte ao curso de Análise e Desenvolvimento de Sistemas.",
+    "skills": ["HTML", "CSS", "Node JS" ,"MySQL, React"],
+    "source": "https://github.com/HenryyDev/Inquadra-finalVersion.git "
   },
   {
     "title": "Atividades Senai",
