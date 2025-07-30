@@ -6,7 +6,7 @@ export const Hero = () => {
   const totalCourseHours = 3200;
   const courseStartDate = new Date("2025-01-23");
   const periods = 9;
-  const currentDate = new Date(); // Simulação futura
+  const currentDate = new Date(); // Simulação futuraa
 
   const weeklyHoursByPeriod = [12, ...Array(7).fill(15), 12];
   const monthlyHoursByPeriod = weeklyHoursByPeriod.map(h => h * 4);
