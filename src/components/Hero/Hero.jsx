@@ -6,8 +6,25 @@ export const Hero = () => {
   const totalCourseHours = 3200;
   const courseStartDate = new Date("2025-01-23");
   const periods = 9;
-  const currentDate = new Date(); // Simulação futuraa
+  const currentDate = new Date(); // agora usa a data real
 
+  // 🧠 Cálculo da idade
+  const birthDate = new Date("2006-11-12");
+  const [idadeAtual, setIdadeAtual] = useState(0);
+
+useEffect(() => {
+  let idade = currentDate.getFullYear() - birthDate.getFullYear();
+  const aniversarioEsteAno = new Date(
+    currentDate.getFullYear(),
+    birthDate.getMonth(),
+    birthDate.getDate()
+  );
+  if (currentDate < aniversarioEsteAno) idade -= 1;
+  setIdadeAtual(idade);
+}, [currentDate]);
+
+
+  // 🎓 Previsão de formatura
   const weeklyHoursByPeriod = [12, ...Array(7).fill(15), 12];
   const monthlyHoursByPeriod = weeklyHoursByPeriod.map(h => h * 4);
   const semesterHoursByPeriod = monthlyHoursByPeriod.map(h => h * 6);
@@ -22,7 +39,8 @@ export const Hero = () => {
   }
 
   const cursoFinalizado = currentDate >= estimatedGraduationDate;
-  const fogosAtivos = cursoFinalizado && currentDate.getFullYear() - estimatedGraduationDate.getFullYear() < 3;
+  const fogosAtivos =
+    cursoFinalizado && currentDate.getFullYear() - estimatedGraduationDate.getFullYear() < 3;
 
   const [tempoRestante, setTempoRestante] = useState({
     anos: 0,
@@ -35,7 +53,7 @@ export const Hero = () => {
 
   useEffect(() => {
     const atualizarContagem = () => {
-      const agora = currentDate;
+      const agora = new Date();
       const diffMs = estimatedGraduationDate - agora;
       const totalSeconds = diffMs / 1000;
 
@@ -87,16 +105,21 @@ export const Hero = () => {
       })();
 
   const remainingHours = cursoFinalizado ? 0 : totalCourseHours - elapsedHours;
-  const progressPercentage = cursoFinalizado ? 100 : Math.floor((elapsedHours / totalCourseHours) * 100);
+  const progressPercentage = cursoFinalizado
+    ? 100
+    : Math.floor((elapsedHours / totalCourseHours) * 100);
   const tempoColor = progressPercentage < 50 ? styles.alertText : styles.normalText;
 
   return (
     <section className={styles.container}>
       <div className={styles.content}>
-        <h1 className={styles.title}>Matheus, técnico em Desenvolvimento de Sistemas</h1>
+        <h1 className={styles.title}>Matheus Pires, técnico em Desenvolvimento de Sistemas</h1>
 
         <p className={styles.description}>
-          Formado em Engenharia de Software pela UniSenai - PR, com formação técnica em
+          Tenho {idadeAtual} anos.{" "}
+          {cursoFinalizado
+            ? "Formado em Engenharia de Software pela UniSenai - PR"
+            : "Sou estudante de Engenharia de Software pela UniSenai - PR"}, com formação técnica em
           Desenvolvimento de Sistemas pelo Senai. Tenho sólida base
           em programação e boas práticas de desenvolvimento adquiridas ao longo
           da formação.
@@ -114,7 +137,7 @@ export const Hero = () => {
               )}
               <p className={styles.graduadoTexto}>
                 Curso finalizado! 🎓<br />
-                Formado em Engenharia de Software
+                Formado em Engenharia de Software aos {idadeAtual} anos
               </p>
             </div>
           ) : (
