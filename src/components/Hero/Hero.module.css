@@ -22,14 +22,18 @@
 }
 
 .title {
-  font-size: 33px;
-  font-weight: 800;
-  margin-bottom: 23px;
-  font-family: var(--font-roboto);
-  background: linear-gradient(90deg, rgba(255,255,255,1) 70%, rgba(255,255,255,0) 120%);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 8rem; /* Aqui você ajusta o espaço superior */
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
 }
+
+
+
 
 .description {
   font-size: 18px;
@@ -65,6 +69,31 @@
   font-family: var(--font-roboto);
   font-weight: bold;
   color: var(--color-text);
+}
+
+/* === Botão de download do currículo === */
+.downloadContainer {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.downloadButton {
+  background-color: #0070f3;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: var(--font-roboto);
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.downloadButton:hover {
+  background-color: #0059c1;
+  transform: scale(1.05);
 }
 
 /* === Botão de contato === */

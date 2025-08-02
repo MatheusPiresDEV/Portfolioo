@@ -1,30 +1,34 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Hero.module.css";
 import { getImageUrl } from "../../utils";
+import curriculoPDF from "../../data/Curriculo-MatheusGustavoDaSilvaPires.pdf";
 
 export const Hero = () => {
   const totalCourseHours = 3200;
   const courseStartDate = new Date("2025-01-23");
   const periods = 9;
-  const currentDate = new Date(); // agora usa a data real
-
-  // 🧠 Cálculo da idade
+  const currentDate = new Date(); // Data atual para simulação
   const birthDate = new Date("2006-11-12");
+
   const [idadeAtual, setIdadeAtual] = useState(0);
+  const [tempoRestante, setTempoRestante] = useState({
+    anos: 0,
+    meses: 0,
+    dias: 0,
+    horas: 0,
+    minutos: 0,
+    segundos: 0
+  });
 
-useEffect(() => {
-  let idade = currentDate.getFullYear() - birthDate.getFullYear();
-  const aniversarioEsteAno = new Date(
-    currentDate.getFullYear(),
-    birthDate.getMonth(),
-    birthDate.getDate()
-  );
-  if (currentDate < aniversarioEsteAno) idade -= 1;
-  setIdadeAtual(idade);
-}, [currentDate]);
+  // Idade atual
+  useEffect(() => {
+    let idade = currentDate.getFullYear() - birthDate.getFullYear();
+    const aniversarioEsteAno = new Date(currentDate.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+    if (currentDate < aniversarioEsteAno) idade -= 1;
+    setIdadeAtual(idade);
+  }, [currentDate]);
 
-
-  // 🎓 Previsão de formatura
+  // Modelagem da carga horária
   const weeklyHoursByPeriod = [12, ...Array(7).fill(15), 12];
   const monthlyHoursByPeriod = weeklyHoursByPeriod.map(h => h * 4);
   const semesterHoursByPeriod = monthlyHoursByPeriod.map(h => h * 6);
@@ -39,17 +43,13 @@ useEffect(() => {
   }
 
   const cursoFinalizado = currentDate >= estimatedGraduationDate;
-  const fogosAtivos =
-    cursoFinalizado && currentDate.getFullYear() - estimatedGraduationDate.getFullYear() < 3;
 
-  const [tempoRestante, setTempoRestante] = useState({
-    anos: 0,
-    meses: 0,
-    dias: 0,
-    horas: 0,
-    minutos: 0,
-    segundos: 0
-  });
+  // Idade no momento da formatura (congelada)
+  let idadeNaFormatura = estimatedGraduationDate.getFullYear() - birthDate.getFullYear();
+  const aniversarioNaFormatura = new Date(estimatedGraduationDate.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+  if (estimatedGraduationDate < aniversarioNaFormatura) idadeNaFormatura -= 1;
+
+  const fogosAtivos = cursoFinalizado && currentDate.getFullYear() - estimatedGraduationDate.getFullYear() < 3;
 
   useEffect(() => {
     const atualizarContagem = () => {
@@ -113,7 +113,11 @@ useEffect(() => {
   return (
     <section className={styles.container}>
       <div className={styles.content}>
-        <h1 className={styles.title}>Matheus Pires, técnico em Desenvolvimento de Sistemas</h1>
+        <h1 className={styles.title}>
+          {cursoFinalizado
+            ? "Matheus Pires, Engenheiro de Software"
+            : "Matheus Pires, Técnico em Desenvolvimento de Sistemas"}
+        </h1>
 
         <p className={styles.description}>
           Tenho {idadeAtual} anos.{" "}
@@ -121,8 +125,7 @@ useEffect(() => {
             ? "Formado em Engenharia de Software pela UniSenai - PR"
             : "Sou estudante de Engenharia de Software pela UniSenai - PR"}, com formação técnica em
           Desenvolvimento de Sistemas pelo Senai. Tenho sólida base
-          em programação e boas práticas de desenvolvimento adquiridas ao longo
-          da formação.
+          em programação e boas práticas de desenvolvimento adquiridas ao longo da formação.
         </p>
 
         <p className={`${styles.description} ${tempoColor} ${styles.timeRemaining}`}>
@@ -130,14 +133,12 @@ useEffect(() => {
             <div className={styles.graduadoWrapper}>
               {fogosAtivos && (
                 <div className={styles.fireworks}>
-                  {[...Array(6)].map((_, i) => (
-                    <span key={i}></span>
-                  ))}
+                  {[...Array(6)].map((_, i) => <span key={i}></span>)}
                 </div>
               )}
               <p className={styles.graduadoTexto}>
                 Curso finalizado! 🎓<br />
-                Formado em Engenharia de Software aos {idadeAtual} anos
+                Formado em Engenharia de Software aos {idadeNaFormatura} anos
               </p>
             </div>
           ) : (
@@ -155,12 +156,18 @@ useEffect(() => {
           <div className={styles.progressFill} style={{ width: `${progressPercentage}%` }} />
         </div>
 
-        <a href="https://wa.me/5541988314797" className={styles.contactBtn}>
-          Entre em contato
-        </a>
+        <div className={styles.downloadContainer}>
+          <a href="https://wa.me/5541988314797" className={styles.contactBtn}>
+             Entre em contato
+          </a>
       </div>
+      <a href={curriculoPDF} download className={styles.downloadButton}>
+             Baixar Currículo em PDF
+          </a>
+        </div>
 
-      <div>
+      {/* Foto fixa no canto direito */}
+      <div className={styles.photoWrapper}>
         <img
           src={getImageUrl("hero/eu.jpg")}
           alt="Foto minha"
