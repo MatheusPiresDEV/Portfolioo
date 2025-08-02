@@ -7,7 +7,7 @@ export const Hero = () => {
   const totalCourseHours = 3200;
   const courseStartDate = new Date("2025-01-23");
   const periods = 9;
-  const currentDate = new Date(); // Data atual para simulação
+  const currentDate = new Date("2030-12-12"); // Data atual para simulação
   const birthDate = new Date("2006-11-12");
 
   const [idadeAtual, setIdadeAtual] = useState(0);
