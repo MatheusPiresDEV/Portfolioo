@@ -1,0 +1,257 @@
+@import "../../vars.css";
+
+/* === Container principal === */
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 49px 10%;
+  height: 500px;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+/* === Conteúdo textual === */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--color-text);
+  z-index: 1;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 8rem; /* Aqui você ajusta o espaço superior */
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+
+
+
+.description {
+  font-size: 18px;
+  font-family: var(--font-roboto);
+  margin-bottom: 52px;
+}
+
+.timeRemaining {
+  font-family: var(--font-roboto);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.alertText {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.normalText {
+  color: var(--color-text);
+}
+
+.graduadoWrapper {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.graduadoTexto {
+  font-size: 18px;
+  font-family: var(--font-roboto);
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+/* === Botão de download do currículo === */
+.downloadContainer {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.downloadButton {
+  background-color: #0070f3;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: var(--font-roboto);
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.downloadButton:hover {
+  background-color: #0059c1;
+  transform: scale(1.05);
+}
+
+/* === Botão de contato === */
+.contactBtn {
+  text-decoration: none;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  border-radius: 100px;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 17px 26px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+}
+
+/* === Imagem principal com animação === */
+.heroImg {
+  width: 400px;
+  height: 400px;
+  z-index: 1;
+  border-radius: 60%;
+  object-fit: cover;
+  animation: floating 3s infinite ease-in-out;
+}
+
+@keyframes floating {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+  100% { transform: translateY(0); }
+}
+
+/* === Efeitos visuais de fundo === */
+.topBlur,
+.bottomBlur {
+  position: absolute;
+  border-radius: 764px;
+  background: rgba(25, 55, 109, 0.7);
+  filter: blur(100px);
+  z-index: 0;
+}
+
+.topBlur {
+  width: 50vw;
+  height: 50vw;
+  min-width: 350px;
+  top: -128px;
+  left: -10vw;
+}
+
+.bottomBlur {
+  width: 32vw;
+  height: 50vw;
+  min-width: 250px;
+  top: 246px;
+  right: -25vw;
+}
+
+/* === Barra de progresso === */
+.progressBar {
+  width: 100%;
+  max-width: 450px;
+  height: 12px;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 100px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #0070f3, #00c7a3);
+  transition: width 1s ease-in-out;
+}
+
+/* === Responsividade === */
+@media screen and (max-width: 830px) {
+  .container {
+    flex-direction: column-reverse;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: auto;
+  }
+
+  .content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .contactBtn {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+
+  .heroImg {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
+  }
+
+  .topBlur,
+  .bottomBlur {
+    width: 70vw;
+    height: 70vw;
+  }
+}
+
+/* === Fogos de artifício elegantes === */
+.fireworks {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 120px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.fireworks span {
+  position: absolute;
+  bottom: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: rocket 1.5s infinite ease-in-out;
+}
+
+.fireworks span:nth-child(1) { left: 10%; background: red; animation-delay: 0s; }
+.fireworks span:nth-child(2) { left: 25%; background: yellow; animation-delay: 0.2s; }
+.fireworks span:nth-child(3) { left: 40%; background: cyan; animation-delay: 0.4s; }
+.fireworks span:nth-child(4) { left: 55%; background: magenta; animation-delay: 0.6s; }
+.fireworks span:nth-child(5) { left: 70%; background: orange; animation-delay: 0.8s; }
+.fireworks span:nth-child(6) { left: 85%; background: lime; animation-delay: 1s; }
+
+@keyframes rocket {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  30% {
+    transform: translateY(-20px) scale(1.2);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(2.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0) scale(0.5);
+    opacity: 0;
+  }
+}
