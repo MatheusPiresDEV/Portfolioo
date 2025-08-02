@@ -5,7 +5,7 @@ import curriculoPDF from "../../data/Curriculo-MatheusGustavoDaSilvaPires.pdf";
 
 export const Hero = () => {
   const totalCourseHours = 3200;
-  const courseStartDate = new Date("2025-01-23");
+  const courseStartDate = new Date();
   const periods = 9;
   const currentDate = new Date("2030-12-12"); // Data atual para simulação
   const birthDate = new Date("2006-11-12");
