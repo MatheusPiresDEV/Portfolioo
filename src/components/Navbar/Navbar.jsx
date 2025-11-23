@@ -27,7 +27,7 @@ export const Navbar = () => {
               <a href="#sobre">Sobre</a>
             </li>
             <li className={styles.navItem}>
-              <a href="#linguagens">Experiência e linguagens</a>
+              <a href="#linguagens">Experiência</a>
             </li>
             <li className={styles.navItem}>
               <a href="#projetos">Projetos</a>

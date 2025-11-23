@@ -1,16 +1,24 @@
 [
   {
-    "title": "Tcc InQuadra",
+    "title": "Histórico de Leitura de HQs e Livros",
     "imageSrc": "projects/tcc.png",
-    "description": "Projeto de aluguel de quadras esportivas, TCC refernte ao curso de Análise e Desenvolvimento de Sistemas.",
-    "skills": ["HTML", "CSS", "Node JS" ,"MySQL, React"],
-    "source": "https://github.com/HenryyDev/Inquadra-finalVersion.git "
+    "description": "Sistema para organizar HQs e livros, permitindo cadastrar obras, acompanhar progresso de leitura, visualizar gráficos e controlar gastos. Inclui carrinho de compras e acesso restrito por senha ('mathe0us').",
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "source": "https://matheuspiresdev.github.io/HistoricoHqs/index.html"
   },
   {
-    "title": "Atividades Senai",
-    "imageSrc": "projects/SeiLa.png",
-    "description": "Realização de todas as atividades de Front-End realizadas no Senai",
-    "skills": ["HTML", "CSS", "JavaScript", "Node","React"],
-    "source": "https://github.com/MatheusPiresDEV/AtividadesSenai"
-  }
+  "title": "Controle de Faltas e Matérias",
+  "imageSrc": "projects/faltas.png",
+  "description": "Sistema desenvolvido para registrar e acompanhar faltas e matérias ao longo do semestre. Permite visualizar um calendário com marcação de presença e ausência, além de gerar relatórios simples para controle acadêmico. O sistema possui validade de um semestre, sendo necessário adicionar novas matérias no início do próximo período.",
+  "skills": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "source": "https://matheuspiresdev.github.io/Faltas/"
+}
 ]

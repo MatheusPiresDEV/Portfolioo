@@ -1,22 +1,36 @@
 [
   {
-    "role": "Menor Aprendiz Administrativo",
+    "role": "Auxiliar de TI",
     "organisation": "Fortecare",
     "startDate": "Janeiro de 2025",
     "endDate": "Atual",
     "experiences": [
-      "Sou responsável pela administração de processos internos, incluindo gestão de pedidos, cadastros e suporte ao cliente. Desenvolvo e mantenho planilhas no Excel para controle eficaz de dados e desempenho, contribuindo diretamente com o setor financeiro no gerenciamento de crédito e na liberação de pedidos."
+      "Otimização e automação de planilhas em Excel para controle operacional.",
+      "Desenvolvimento de dashboards interativos no Power BI para análise de dados e indicadores.",
+      "Gestão de processos internos e atendimento ao cliente."
     ],
     "imageSrc": "history/LOGO-FORTECARE.png"
   },
   {
-    
-     "role": "Gerenciador de Marketplace",
+    "role": "Aprendiz Administrativo",
+    "organisation": "Fortecare",
+    "startDate": "Janeiro de 2025",
+    "endDate": "Outubro de 2025",
+    "experiences": [
+      "Gestão de processos internos e pedidos.",
+      "Suporte ao cliente e apoio administrativo.",
+      "Criação de planilhas em Excel para controle financeiro."
+    ],
+    "imageSrc": "history/LOGO-FORTECARE.png"
+  },
+  {
+    "role": "Gerenciador de Marketplace",
     "organisation": "Colortec",
     "startDate": "Julho de 2021",
     "endDate": "Fevereiro de 2022",
     "experiences": [
-      "Gerenciei o site da empresa, adicionando fotos, descrições e peso aos produtos, além de auxiliar nas áreas de impressões e vendas quando necessário."
+      "Gerenciamento e atualização do site da empresa com fotos, descrições e informações de produtos.",
+      "Apoio nas áreas de impressões, pedidos e vendas."
     ],
     "imageSrc": "history/CTC.png"
   }
