@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Hero.module.css";
 import { getImageUrl } from "../../utils";
-import curriculoPDF from "../../data/Curriculo-MatheusGustavoDaSilvaPires.pdf";
+import curriculoPDF from "../../data/Curriculo_MatheusPires_v1.pdf";
 
 export const Hero = () => {
   const totalCourseHours = 3200;
